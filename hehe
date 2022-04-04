@@ -1,0 +1,71 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Kuko's Ware", "GrapeTheme")
+local Tab = Window:NewTab("Silent")
+local MainSection = Tab:NewSection("Silentaim Settings")
+MainSection:NewButton("SilentLock", "Activates Silent", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kukinekk/silent/main/silentlock'))()
+    print("Clicked")
+end)
+MainSection:NewTextBox("Predaction", "Sets HitChance", function(txt)
+	print(txt)
+end)
+MainSection:NewDropdown("Part", "Sets Part", {"HumanoidRootPart", "Toroso", "HighToroso"}, function(currentOption)
+    print(currentOption)
+end)
+local Tab = Window:NewTab("Lock")
+local LockSection = Tab:NewSection("Lock Settings")
+LockSection:NewButton("AimLock", "Keybind is E", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Kukinekk/hehe/main/zuroluv'))()
+    print("Clicked")
+end)
+LockSection:NewTextBox("Predaction", "Sets HitChance", function(txt)
+	print(txt)
+end)
+LockSection:NewDropdown("Part", "Sets Part", {"HumanoidRootPart", "Toroso", "HighToroso"}, function(currentOption)
+    print(currentOption)
+end)
+local Tab = Window:NewTab("Miscs")
+local MiscsSection = Tab:NewSection("Player")
+MiscsSection:NewButton("Korblox", "Gives U Client Sided Korblox", function()
+local ply = game.Players.LocalPlayer
+local chr = ply.Character
+chr.RightLowerLeg.MeshId = "902942093"
+chr.RightLowerLeg.Transparency = "1"
+chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+chr.RightFoot.MeshId = "902942089"
+chr.RightFoot.Transparency = "1"    
+    print("Clicked")
+end)
+MiscsSection:NewButton("Headless", "Gives U Client Sided Headless", function()
+       game.Players.LocalPlayer.Character.Head.Transparency = 1
+for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+if (v:IsA("Decal")) then
+v:Destroy()
+end
+end
+print(Clicked)
+end)
+local MiscsSection = Tab:NewSection("Animations")
+MiscsSection:NewButton("Tryhard Animations", "Gives U Good Animations", function()
+    while true do
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=656117878"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=656114359"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=656115606"
+game.Players.LocalPlayer.Character.Humanoid.Jump = false
+wait(1)
+end
+end)
+local Tab = Window:NewTab("Settings")
+local SettingsSection = Tab:NewSection("Select Keybind For Hiding UI")
+SettingsSection:NewKeybind("Toggle UI", "Select Ur Keybind", Enum.KeyCode.V, function()
+	Library:ToggleUI()
+end)
+MiscsSection:NewSlider("WalkSpeed", "Changes Walkspeed", 500, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
